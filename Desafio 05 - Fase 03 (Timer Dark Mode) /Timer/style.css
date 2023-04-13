@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: white;
+
+  --bt-background: #E1E1E6;
+  --bt-background-blue: #02799D;
+
+  --text-color: #323238;
+
+  --svg-default-color: #323238;
+
+  --input-color: #323238;
+
+  --svg-active-color: white;
+  font-size: 62.5%;
+}
+
+.dark {
+  --bg-color: #121214;
+
+  --bt-background: #29292E;
+  --bt-background-blue: #0A3442;
+
+  --text-color: #FFFFFF;
+
+  --input-color: #C4C4CC;
+
+  --svg-default-color: #C4C4CC;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+  display: grid;
+  min-height: 100vh;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+#mode button {
+  background-color: transparent;
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
+}
+
+main {
+  justify-self: center;
+  align-self: center;
+  display: grid;
+
+  grid-template-areas: "A B";
+  gap: 19.2rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  color: var(--svg-default-color);
+}
+
+#timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#time {
+  font-size: clamp(10rem, 10rem + 10vw, 12.5rem);
+  line-height: clamp(12rem, 12rem + 10vw, 14.8rem);
+  display: flex;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+#controls button {
+  background-color: transparent;
+}
+
+#controls button:hover,
+#mode button:hover {
+  opacity: .7;
+}
+
+#sounds {
+  display: grid;
+  grid-template-areas: "A B"
+    "C D";
+  gap: 3.2rem;
+}
+
+#sounds button {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+
+  border-radius: 24px;
+
+  width: 13.8rem;
+  height: 15.8rem;
+
+  background-color: var(--bt-background);
+}
+
+#sounds button:hover {
+  scale: 1.1;
+}
+
+#sounds button.active {
+  background-color: var(--bt-background-blue);
+  color: var(--svg-active-color);
+}
+
+#sounds svg {
+  margin-bottom: 3.2rem;
+}
+
+#sounds input[type=range] {
+  appearance: none;
+  background-color: var(--input-color);
+  width: 9rem;
+  height: .4rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: var(--input-color);
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 1.7rem;
+}
+
+#sounds input[type=range].active {
+  background-color: var(--svg-active-color);
+}
+
+input[type="range"].active::-webkit-slider-thumb {
+  background-color: var(--svg-active-color);
+}
+
+.hide {
+  display: none;
+}
